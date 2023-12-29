@@ -17,12 +17,13 @@
 
   * git사용자 이메일 설정
    
-     $  git config --global user.email "자신의 이메일"
-     $ git config --global user.name "자신의 이름"
+      $  git config --global user.email "자신의 이메일"
+     
+      $ git config --global user.name "자신의 이름"
 
   * git 사용자 이메일 확인
 
-     $  git config user.email
+       $ git config user.email
 
 ### 원격저장소 등록
 
@@ -51,7 +52,7 @@
   * 커밋 기록을 확인하는 명령어
         
         $ git log
-        
+
 
 
 ### push

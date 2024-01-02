@@ -11,9 +11,9 @@ public class A05PrefixPostfixTest {
 		// 너무 많이 사용되는 +1 또는 -1은 더 간단하게 증감연산 ++ , -- 사용합니다.
 		// 아래 예제는 printIn
 		System.out.println("== postfix 확인 (출력 후에 +1)==");
-		System.out.println(start--);		//출력 후에 +1
-		System.out.println(start--);		//출력 후에 +1
-		System.out.println(start--);		//출력 후에 +1
+		System.out.println(start++);		//출력 후에 +1
+		System.out.println(start++);		//출력 후에 +1
+		System.out.println(start++);		//출력 후에 +1
 		System.out.println(start++);		//출력 후에 +1
 		System.out.println(start++);		//출력 후에 +1
 		System.out.println(start++);		//출력 후에 +1

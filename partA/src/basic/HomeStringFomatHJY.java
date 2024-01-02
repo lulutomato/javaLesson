@@ -55,7 +55,7 @@ public class HomeStringFomatHJY {
    System.out.println(String.format("97 → %c, 122 → %c", 97, 122));
    System.out.println(String.format("44032 → %c, 55203 → %c", 44032, 55203)); //  U+AC00, U+D7A3
    }
-
+ 
 
    
    

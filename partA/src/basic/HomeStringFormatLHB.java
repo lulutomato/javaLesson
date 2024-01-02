@@ -1,4 +1,4 @@
-package basic;
+
 
 public class HomeStringFormatLHB {
     public static void main(String[] args) {

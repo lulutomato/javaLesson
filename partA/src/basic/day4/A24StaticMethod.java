@@ -76,7 +76,7 @@ public class A24StaticMethod {
   
   }
 
-
+ 
   //인자와 리턴값을 갖는 메소드
   public static int add(int a,int b, int c){
 

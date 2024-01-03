@@ -30,5 +30,5 @@ public class A26Test25 {
 
     System.out.println(start + "~" + end + "까지의 곱하기 결과 :" + A25MySampleMethod.MultiplyToN(start, end));
   }
-  
+   
 }

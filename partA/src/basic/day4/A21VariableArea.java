@@ -30,5 +30,5 @@ public class A21VariableArea {
     //System.out.println("number=" +number);    //static이 아닌 클래스 선언 변수는 사용 못 함.
     System.out.println("number=" +number2);
   }
-  
+   
 }

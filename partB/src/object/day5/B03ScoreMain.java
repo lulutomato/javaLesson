@@ -15,7 +15,7 @@ public class B03ScoreMain {
 
     모모.setname("모모");
     모모.setgrade(1);
-    모모.setjumsues(new int[]{80,80,80});
+    모모.setjumsues(new int[]{81,80,80});
     
 
     다현.setname("다현");
@@ -30,27 +30,28 @@ public class B03ScoreMain {
     쯔위.setgrade(2);
     쯔위.setjumsues(new int[]{90,86,68,77});
 
-    System.out.println("이름=" + 모모.getname());
-    System.out.println("총점="+ 모모.sum() );
-    System.out.println("평균=" +모모.average());
+    // System.out.println("이름=" + 모모.getname());
+    // System.out.println("총점="+ 모모.sum() );
+    
     모모.printData();
-
+    System.out.println("평균=" +모모.average());
   
-    System.out.println("이름=" + 다현.getname());
-    System.out.println("총점=" + 다현.sum());
-    System.out.println("평균=" + 다현.average());
+    // System.out.println("이름=" + 다현.getname());
+    // System.out.println("총점=" + 다현.sum());
+    
     다현.printData();
-
-    System.out.println("이름=" + 나연.getname());
-    System.out.println("총점=" + 나연.sum());
-    System.out.println("평균=" + 나연.average());
+    System.out.println("평균=" + 다현.average());
+    
+    // System.out.println("이름=" + 나연.getname());
+    // System.out.println("총점=" + 나연.sum());
+    
     나연.printData();
-
-    System.out.println("이름=" + 쯔위.getname());
-    System.out.println("총점=" + 쯔위.sum());
-    System.out.println("평균=" + 쯔위.average());
+    System.out.println("평균=" + 나연.average());
+    // System.out.println("이름=" + 쯔위.getname());
+    // System.out.println("총점=" + 쯔위.sum());
+    
     쯔위.printData();
-
+    System.out.println("평균=" + 쯔위.average());
     
 
 

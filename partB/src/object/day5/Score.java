@@ -45,14 +45,14 @@ public class Score {
       }
 
         public double average(){
-          int temp = 0;  // temp를 이용해서 위에 sum을 구한걸 가져옴
-          temp=sum()/jumsues.length;
+          double temp = 0;  // temp를 이용해서 위에 sum을 구한걸 가져옴
+          temp = (double)sum()/jumsues.length;//double 로 캐스팅
           return temp;
           
         }
 
         public void printData(){
-          System.out.println("과목 점수=" + Arrays.toString(jumsues));
+          System.out.println("이름: " + name + "\n학년 : "+ grade+ "\n과목 점수=" + Arrays.toString(jumsues));
 
         }
           

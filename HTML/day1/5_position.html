@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5_position</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+        html{
+            /* 16px  x 0.625 = 10px = 1rem */
+            font-size: 62.5%;
+        }
+        /* 모든 요소에 적용할 스타일 선택지는  * (와일드카드 문자) */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            /* 글씨 크기 16px */
+            font-size: 1.6rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        div{
+            
+            border : 2px dotted green;
+            width: 10rem;
+            height: 12rem;
+            margin : 2rem;
+        }
+        /* 선택자 : class 이름을 사용합니다. class 속성값 모든 child 요소에 적용하기 */
+        .child {
+            width: 8rem;
+            height: 8rem;
+            padding: 1rem;
+            margin: 1rem;
+        }
+        .child_relative{
+            /* 현재 위치에서 좌표 이동할 수 있습니다. 좌표값은 top,left */
+            position: relative;
+            top : 2rem;
+            left : 2rem;
+            border: 1px solid brown;
+        }
+        .child_absolute{
+            /* 좌표값 top,left를 전체 화면 기준으로 정합니다.
+                top, left 는 브라우저 화면 왼쪽위가 0 입니다. top은 세로,left는 가로방향으로 값이 증가합니다.
+            */
+            /* 스크롤하면 화면에서 없어집니다. */
+            position: absolute;
+            top : 20rem;
+            left : 21rem;
+            border: 1px solid rgb(10,20,150);
+            background-color: beige;
+        }
+        .child_fixed{
+            /* 스크롤하면 화면에 같은 위치에 고정됩니다. */
+            position: fixed;
+            top : 15rem;
+            left : 3rem;
+            border: 1px dotted lemonchiffon;
+            background-color: tomato;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h3>position</h3>
+    <p>웹문서 상에서 요소를 배치할 때 기존 흐름과 다르게 할 수 있는 속성이 있습니다.</p>
+
+    <div>
+        <div class="child"> abcd </div>
+    </div>
+    <div>
+        <!-- class 이름을 여러가지 나열해서 적용시킬 수 있습니다. -->
+        <div class="child child_relative"> abcd</div>
+    </div>
+    <div>
+        <div class ="child child_absolute">abcde</div>
+    </div>
+    
+    <div>
+        <div class="child child_fixed">add</div>
+    </div>
+</body>
+</html>

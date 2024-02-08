@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>8_flexbox</title>
+    <style>
+         .first{
+            display: flex;
+            height: 50rem;
+            background-color: whitesmoke;
+
+         }
+         .first > div{
+            box-sizing: border-box;
+            width : 15rem;
+            height: 15rem;
+            border : 2px dashed rgb(255, 0, 0);
+            margin : 2rem;
+            font-size: 1.5rem;
+            color: wheat;
+            font-weight: 700;
+            /* 블록요소의 텍스트 컨텐츠를 중앙에 오도록합니다. */
+            display: flex;
+            /* 수직 방향 중앙  */
+            align-items: center;
+            /* 수평 방향 중앙ㅇ */
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>    
+    <div class="first">
+    <div>I</div>
+    <div>am</div>
+    <div>...???</div>
+    <div>안녕</div>
+    <div>Hi Hello</div>
+    <div>내일부터는</div>
+    <div>연휴</div>
+</div>
+    
+</body>
+</html>

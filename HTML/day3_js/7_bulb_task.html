@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bulb_task</title>
+    <style>
+       
+   
+        </style>
+</head>
+<body>
+    <h2>현재 상태 : <span id = 'color' style= "color : red" >OFF</span> </h2>
+    <img src = "../image/KakaoTalk_20240213_160833991.gif" alt ="" id="bulb" style="cursor:pointer;" onclick="bulbonoff()"title = "전구를 클릭하지 마세요">
+    <button onclick="bulbon()" id="on">켜주세요</button>
+    <button onclick="bulboff()"id="off">꺼주세요</button>
+    <script>
+        const id = document.getElementById('color')
+        const bulb = document.getElementById('bulb')
+        const on = document.getElementById('on')
+        const off = document.getElementById('off')
+        off.disabled = true
+        function bulbon(){
+            bulb.src="../image/KakaoTalk_20240213_160833779.gif"
+           id.style.color = "green";
+           id.innerHTML = "ON"
+           on.disabled = true
+           off.disabled = false
+        }
+        function bulbonoff(){
+            if(id.innerHTML=='ON') //현재가 on이면 클릭시 off 하기
+            bulboff()
+            else
+            bulbon()
+        }
+        function bulboff(){
+            bulb.src="../image/KakaoTalk_20240213_160833991.gif"
+            id.style.color = "red"
+            id.innerHTML = "OFF"
+            on.disabled = false
+            off.disabled = true
+        }
+        //초기화는 원하는 대로
+        bulbon()
+    </script>
+
+</body>
+</html>

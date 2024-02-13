@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>changeStyle</title>
+    <!-- 여기서 스크립트를 작성하면 요소에 접근할 때 제한이 있습니다. -->
+</head>
+<body>
+    <h2 id="title">JS로 h2요소의 컨텐츠를 변경합니다.</h2>
+    <button onclick="change()">실행하기</button>
+    <button onclick="toggle()">색상 toggle</button>
+    <script>
+        //전역변수로 선언
+        const title = document.getElementById('title')
+        function change(){
+          //style 변경하기
+          title.style.color='red'
+          title.style.fontStyle='italic'
+        }
+        function toggle(){
+            //자바의 문자열 메소드와 거의 유사합니다.단, 동등 비교는 ==로 합니다
+            let color = title.style.color           //color 변수로 요소 스타일 읽기만 가능.
+            if (color == 'red')
+                title.style.color = 'black'         //color 변수로 요소 스타일 설정은 불가능ㄹ
+            else
+                title.style.color = 'red'
+        }
+    </script>
+</body>
+</html>

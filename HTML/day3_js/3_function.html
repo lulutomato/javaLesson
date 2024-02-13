@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+    <script>
+        //함수의 형식 : 자바 메소드와 같이 인자와 리턴값이 있습니다.
+        //              자바와 다르게 인자와 리턴값 형식을 미리 선언하지 않습니다
+
+        //기본형식 1
+        function myfuncA(x,y){  //인자가 2개 입니다.
+            let temp = x*10+y;
+            console.log("myfuncA 실행하기!!")
+            console.log("리턴값 =" + temp)
+            return  temp;          //샘플 수식
+        }
+
+        //기본형식 2 - 함수를 값처럼 변수 const에 대입. 참조변수명이 함수이름이 됩니다
+        const myfuncB = function(x,y){
+            let temp = x*10+y;
+            console.log("myfuncB 실행하기!!")
+            console.log("리턴값 =" + temp)
+            return  temp;    
+        }
+        
+        //형식 3 - 화살표 함수(arrow function). 메소드의 인자가 함수 일 때 많이 사용합니다.
+        const myfuncC = (x,y) => {
+            let temp = x*10+y;
+            console.log("myfuncC 실행하기!!")
+            console.log("리턴값 =" + temp)
+            return  temp;    
+        }
+
+
+    </script>
+</head>
+<body>
+    <!-- 인자값 없음. 연산 못함(NaN) -->
+    <button onclick="myfuncA()">함수A 실행하기</button>
+    <button onclick="myfuncA(2,4)">함수A 실행하기</button>
+    <hr>
+    <button onclick= "myfuncB(2,6)"> 함수B 실행하기</button>
+    <button onclick= "myfuncC(2,5)"> 함수C 실행하기</button>
+    <script>
+        //함수는 1)위와 같이 사용자의 이벤트에 대한 동작으로 실행할 수 있고
+        //2) 스크립트 태그 안에서 또는 다른 함수 안에서 호출 될 수 있습니다.
+        let result=0;
+        result = myfuncA(3,1);
+        console.log('__myfuncA 리턴=',result)
+        result = myfuncB(3,'2');  //오류는 없지만 + 대신 문자열 연결연산합니다.
+        console.log('__myfuncB 리턴=',result)
+        result = myfuncC(3,3);
+        console.log('__myfuncC 리턴=',result)
+        
+    </script>
+</body>
+</html>

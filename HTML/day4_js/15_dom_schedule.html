@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>array_schedule</title>
+    <style>
+        table {width: 800px;}
+        /* 테이블 크기 800픽셀에 대한 백분율로 너비를 설정합니다 */
+        th { width: 13%; background-color: tomato;color: white;}
+        td { width: 10%;}
+        th,td{border :1px solid tomato; padding:7px 12px;  text-align: center;}
+    </style>
+</head>
+<body>
+    <h3>오늘의 스케줄</h3>
+    <table>
+        <!-- 자바스크립트 배열에 저장된 값으로 시간표를 만들어 봅니다. -->
+        <tr id ="time">
+           
+        </tr>
+        <tr id="todo">
+       
+        </tr>
+    </table>
+    <hr>
+    <table id ="Vertical">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Todo</th>
+                
+            </tr>
+            <tbody></tbody>
+            <!-- tbody 의 자식으로 tr을 만들어서 append 하기. 그냥 순수 for문으로 배열 사용하기 -->
+        </thead>
+
+
+
+
+    </table>
+    <script>
+        const time =['09:00','11:00','12:30','14:00','16:45']
+        const todo =['수업','과제','점심식사','주간회의','자료조사']
+        function makeTable(){
+            //dom 메소드 creatElement, appendChild 이용해서 완성하세요
+            //첫번째 행 제목 th 요소 생성해서 append
+            let th = document.createElement('th')
+            const timeRow = document.getElementById('time')
+            const todoRow = document.querySelector('#todo')
+            const time1 = document.querySelector('#time')
+           
+             th.innerHTML = "TIME"
+            timeRow.appendChild(th)
+            time.forEach((value) => {
+              
+                //td요소 생성(내용은 배열값)후 append
+                const newtd = document.createElement('td')
+                newtd.innerHTML= value
+                time1.appendChild(newtd)
+            })
+            //두번째 행 제목 th 요소 생성해서 append
+            const todo1 = document.querySelector('#todo') 
+            th = document.createElement('th')
+            th.innerHTML = "TODO"
+            todoRow.appendChild(th)
+            todo.forEach(function(value){
+               //td요소 생성(내용은 배열값)후 append
+               const newtd4 = document.createElement('td')
+               newtd4.innerHTML = value
+               todo1.appendChild(newtd4)
+               
+            })
+         
+        }
+        makeTable() 
+        
+        function verticalTable(){
+            const tbody = document.querySelector('#Vertical tbody')// vertical id 에서 tbody 소환
+          //table 만들 때 tbody는 브라우저에서 자동으로 추가합니다.(주의)
+
+            for(let i =0;i < time.length;i++){
+                tr = document.createElement('tr')
+                /////////////////////////
+                td = document.createElement('td')
+                td.innerHTML = time[i]
+                tr.appendChild(td)
+                //////////////////////
+                td = document.createElement('td')
+                td.innerHTML = todo[i]
+                tr.appendChild(td)
+                /////////////////////
+                tbody.appendChild(tr)
+                
+            }
+        
+        }
+        verticalTable()
+    </script>
+</body>
+</html>

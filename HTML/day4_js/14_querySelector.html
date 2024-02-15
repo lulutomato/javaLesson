@@ -32,9 +32,14 @@
         </tbody>
     </table>
     <script>
-        //getElementById 대신에 CSS에서 사용했던 선택자로 요소 가져오기
-        //               querySelector는 1개만 가져오는 메소드
-        //               querySelectorAll 는 여러개 가져오는 메소드
+        //2. dom 메소드 : html 요소를 가져오는 '메소드' 
+        //1)         getElementById 대신에 CSS에서 사용했던 선택자로 요소 가져오기
+        //2)         querySelector는 1개만 가져오는 메소드
+        //3)         querySelectorAll 는 여러개 가져오는 메소드
+        //4) 요소를 만들어주는 메소드 : creatElement (화면에 출력할 태그를 만듭니다.)
+        //5) 요소를 추가해주는 메소드 : appendchild
+        //6) 요소를 여러개 가져오는 메소드 : getElementsByTagName, getElementsByClassName
+        
         const trOne = document.querySelector('tr')
         console.log(trOne)
         const trMany = document.querySelectorAll('tr')

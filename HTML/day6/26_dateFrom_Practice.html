@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dateForm</title>
+</head>
+<body>
+    <h3>날짜 형식을 다루는 input 예시</h3>
+    <hr>
+    <form action="">
+        <label for="night">숙박일수</label>
+
+        <select name="days" id="night">
+            <option value="0">선택</option>
+            <option value="1">1박</option>
+            <option value="2">2박</option>
+            <option value="3">3박</option>
+            <option value="4">4박</option>
+            <option value="5">5박</option>
+        </select><br>
+        <label for="enterDate">입실날짜 :</label>
+        <input type="date" name="start" id="enterDate">
+        <label for="outDate">퇴실날짜 :</label>
+        <input type="date" name="end" id="outDate" disabled><br>
+        <!-- input 속성 disabled는 비활성화 속성. 사용자가 접근을 못합니다. -->
+    </form>
+    <!-- document.forms[1] -->
+    <form action="">
+
+    </form>
+    <script>
+        //1) 18,19번은 입력요소 가져올때 querySelector 사용 : 선택자 연습
+        //2) form 은 document의 하위객체 입니다. 여러 form 을 가질 수 있으므로 
+        //          배열 forms 이용하여 입력 요소값을 가져올수 있습니다.
+        const night = document.forms[0].days  //name 속성값 사용
+        const start = document.forms[0].start
+        const end = document.forms[0].end
+
+        //입실날짜를 오늘 날짜로 합니다. => new Date() 를 조작할 예정.
+        // type = date 요소의 value는 yyyy-mm-dd 패턴입니다.
+        //start.value = '2024-02-16'
+
+        //날짜를 전달하면 yyyy-mm-dd 패턴의 문자열로 리턴해 주는 함수
+        function dateFormat(vdate){ //vdate는 날짜 타입 인자입니다.
+            const year = vdate.getFullYear()
+            //문자열을 무조건 2개 문자로 합니다. 부족하면 앞에 0으로 채우기
+            const month = (vdate.getMonth()+1).toString().padStart(2,'0')
+            const day = vdate.getDate().toString().padStart(2,'0')
+
+            //[year,month,day] 배열 값을 기호 - 로 연결
+            console.log([year,month,day].join('-'))
+            return [year,month,day].join('-')
+        }
+        start.value = dateFormat(new Date()) //new Date()를 조작
+        dateFormat(new Date())
+        //이벤트 리스터(핸들러)
+        document.getElementById("night").addEventListener('change',changeEndDate)
+        
+            //1) 입실날짜 문자열 가져오기 -> Date로 바꾸기,☞ new Date(문자열)
+            // 숙박일수 값 가져오기 -> 입실 날짜에 더하여 퇴실날짜 구하기 ☞ setXXXX 메소드 사용
+            // 퇴실날짜에 문자열로 value 설정하기
+        //콜백함수 이름을 인자로 전달할 때에는 () 안씁니다.()는 호출    
+       //2) 입실날짜 선택했을 때 
+        //  1) 2)는 같은 실행 코드 => 퇴실날짜 구하기
+            function changeEndDate(){
+            console.log('선택 입실날짜=' ,start.value )
+            console.log('선택 숙박일 =', night.value)
+            let day = new Date(start.value)
+            let date = Number(night.value)
+            day.setDate(day.getDate()+date)
+            //퇴실날짜 input은 전역변수 end로 선언했습니다
+            end.value = dateFormat(day)
+            }
+            //입실날짜 요소의 min,max속성으로 값의 제한을 설정해 봅니다.
+            // 요구사항 : min 은 오늘 날짜
+            //           max 는 3개월
+            function initstart(){
+                let today = new Date();
+                start.value = dateFormat(today)
+                start.min = start.value //오늘 이전 날짜는 비활성화
+                today.setMonth(today.getMonth()+3)
+                start.max = dateFormat(today) //오늘 이후 3개월까지 예약 가능
+
+            }    
+            initstart()
+    </script>
+</body>
+</html>
